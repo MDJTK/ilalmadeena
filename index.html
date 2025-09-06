@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IlalMadeena'25</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image" href="images/iconlogo.png">
+</head>
+<body>
+
+<nav>
+  <div class="logo"><img src="images/Logo" alt=""></div>
+  <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul id="primary-navigation" class="nav-links" role="menubar">
+    <li role="none"><a href="#" role="menuitem" tabindex="0">Home</a></li>
+    <li role="none"><a href="#" role="menuitem" tabindex="0">Registration</a></li>
+  </ul>
+</nav>
+
+<main class="hero" role="main" aria-label="Hero section encompassing adventure header and call-to-action">
+    <img class="img-banner" src="images/hero-1.png" alt="hero" srcset="">
+  <button id="startNowBtn" aria-haspopup="dialog" aria-controls="registrationModal">Register</button>
+</main>
+
+<!-- Modal - Registration -->
+<div class="modal-overlay" id="registrationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true" tabindex="-1">
+  <div class="modal modal-content" id="modalContent" role="document">
+    <button class="close-btn" aria-label="Close registration form">&times;</button>
+    <h2 id="modalTitle" style="margin-top:0; margin-bottom: 1rem; color: #61b0ff;text-align: center;">Register</h2>
+        <!-- Registration Form Section -->
+        <form action="" method="post" id="programForm">
+            <div class="field">
+                <label for="shift">Shift:</label>
+                <select id="shift" name="Shift" required>
+                    <option value="evening">Evening</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                    <option value="online">Online</option>
+                </select>
+            </div>
+            
+            <div class="field row">
+                <div id="flex-container">
+                    <label for="class">Class:</label>
+                    <select id="class" name="Class" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">+1</option>
+                        <option value="12">+2</option>
+                    </select>
+                </div>
+                <div id="flex-container">
+                    <label for="division" id="divisionLabel">Division:</label>
+                    <input type="text" id="division" name="Division">
+                </div>
+            </div>
+            
+            <div class="field" id="gender-container">
+                <label for="gender">Gender:</label>
+                <div class="gn">
+                    <input type="radio" id="male" name="Gender" value="male" required>
+                    <label for="male">Male</label>
+                </div>
+                <div class="gn">
+                    <input type="radio" id="female" name="Gender" value="female" required>
+                    <label for="female">Female</label>
+                </div>
+                
+            </div>
+            
+            <div class="field row">
+                <div id="flex-container">
+                    <label for="item">Item:</label>
+                    <select id="item" name="Item" required>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                 
+                <div id="flex-container">
+                    <label for="GroupName">Group name</label>
+                    <select id="GroupName" name="GroupName">
+                        <option value="അഖീഖ്">അഖീഖ്</option>
+                        <option value="യാഖൂത്">യാഖൂത്</option>
+                        <option value="മർജാൻ">മർജാൻ</option>
+                        <option value="ഫൈറൂസ്">ഫൈറൂസ്</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="field row">
+                <div id="flex-container" class="size ">
+                    <label for="idNumber">ID:</label>
+                    <input type="text" id="idNumber" name="ID" minlength="2" maxlength="4" placeholder="Enter ID" required>
+                </div>
+                
+                <div id="flex-container" class="_size">
+                    <label for="name">Student's Name:</label>
+                    <input type="text" placeholder="Enter Student's name" id="name" name="Name" required>
+                </div>
+            </div>
+            <!-- Group Song Members Section (hidden unless Group Song is selected) -->
+            <div class="field" id="groupSongFields" style="display: none;">
+                <label>Group Members:</label>
+                <div id="membersContainer"></div>
+                <button type="button" id="addMemberBtn" >+ Add Member</button>
+            </div>
+            
+            <div class="field">
+                <label for="usthadName">Usthad's Name:</label>
+                <input type="text" placeholder="Enter Usthad's Name" id="usthadName" name="Usthad" required>
+            </div>
+            
+            <div class="submit-button-container">
+                <button type="submit" id="submit-button">Submit</button>
+            </div>
+        </form>
+        <div id="message"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="index.js"></script>
+</body>
+</html>
